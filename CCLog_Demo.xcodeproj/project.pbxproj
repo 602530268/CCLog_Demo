@@ -15,6 +15,9 @@
 		AAA9F0181EAF529B0077F726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA9F0161EAF529B0077F726 /* LaunchScreen.storyboard */; };
 		AAA9F0231EAF529B0077F726 /* CCLog_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9F0221EAF529B0077F726 /* CCLog_DemoTests.m */; };
 		AAA9F02E1EAF529B0077F726 /* CCLog_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9F02D1EAF529B0077F726 /* CCLog_DemoUITests.m */; };
+		AAA9F0421EAF52AB0077F726 /* CClogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9F03D1EAF52AB0077F726 /* CClogManager.m */; };
+		AAA9F0431EAF52AB0077F726 /* CCLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9F03F1EAF52AB0077F726 /* CCLogView.m */; };
+		AAA9F0441EAF52AB0077F726 /* UIWindow+CCLog.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA9F0411EAF52AB0077F726 /* UIWindow+CCLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		AAA9F0291EAF529B0077F726 /* CCLog_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLog_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA9F02D1EAF529B0077F726 /* CCLog_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCLog_DemoUITests.m; sourceTree = "<group>"; };
 		AAA9F02F1EAF529B0077F726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA9F03C1EAF52AB0077F726 /* CClogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CClogManager.h; sourceTree = "<group>"; };
+		AAA9F03D1EAF52AB0077F726 /* CClogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CClogManager.m; sourceTree = "<group>"; };
+		AAA9F03E1EAF52AB0077F726 /* CCLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLogView.h; sourceTree = "<group>"; };
+		AAA9F03F1EAF52AB0077F726 /* CCLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLogView.m; sourceTree = "<group>"; };
+		AAA9F0401EAF52AB0077F726 /* UIWindow+CCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CCLog.h"; sourceTree = "<group>"; };
+		AAA9F0411EAF52AB0077F726 /* UIWindow+CCLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CCLog.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,7 @@
 				AAA9F00C1EAF529B0077F726 /* AppDelegate.m */,
 				AAA9F00E1EAF529B0077F726 /* ViewController.h */,
 				AAA9F00F1EAF529B0077F726 /* ViewController.m */,
+				AAA9F03B1EAF52AB0077F726 /* CCLog */,
 				AAA9F0111EAF529B0077F726 /* Main.storyboard */,
 				AAA9F0141EAF529B0077F726 /* Assets.xcassets */,
 				AAA9F0161EAF529B0077F726 /* LaunchScreen.storyboard */,
@@ -138,6 +148,19 @@
 				AAA9F02F1EAF529B0077F726 /* Info.plist */,
 			);
 			path = CCLog_DemoUITests;
+			sourceTree = "<group>";
+		};
+		AAA9F03B1EAF52AB0077F726 /* CCLog */ = {
+			isa = PBXGroup;
+			children = (
+				AAA9F03C1EAF52AB0077F726 /* CClogManager.h */,
+				AAA9F03D1EAF52AB0077F726 /* CClogManager.m */,
+				AAA9F03E1EAF52AB0077F726 /* CCLogView.h */,
+				AAA9F03F1EAF52AB0077F726 /* CCLogView.m */,
+				AAA9F0401EAF52AB0077F726 /* UIWindow+CCLog.h */,
+				AAA9F0411EAF52AB0077F726 /* UIWindow+CCLog.m */,
+			);
+			path = CCLog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA9F0421EAF52AB0077F726 /* CClogManager.m in Sources */,
 				AAA9F0101EAF529B0077F726 /* ViewController.m in Sources */,
 				AAA9F00D1EAF529B0077F726 /* AppDelegate.m in Sources */,
 				AAA9F00A1EAF529B0077F726 /* main.m in Sources */,
+				AAA9F0441EAF52AB0077F726 /* UIWindow+CCLog.m in Sources */,
+				AAA9F0431EAF52AB0077F726 /* CCLogView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
