@@ -11,7 +11,8 @@
 @interface CCLogView : UIView
 
 @property(nonatomic,strong) UITextView *logTextView;
-@property(nonatomic,strong) UIButton *cleanBtn;
+@property(nonatomic,strong) UIButton *cleanBtn; //清空日志
+@property(nonatomic,strong) UIButton *stopScrollBtn; //停止滚动
 
 - (void)cc_show;
 - (void)cc_hidden;

@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+//打印在控制台和logView上
 #define CCLog(...) printf("%s %d行: %s\n",__FUNCTION__,__LINE__,[[NSString stringWithFormat:__VA_ARGS__] UTF8String]);   \
 [CClogManager logEnable] == YES ? [CClogManager writeLogWith:[NSString stringWithFormat:__VA_ARGS__]] : 0;
+
+//只会打印在logView上
+#define CCLogOnly(...) [CClogManager logEnable] == YES ? [CClogManager writeLogWith:[NSString stringWithFormat:__VA_ARGS__]] : 0;
 
 
 @interface CClogManager : NSObject

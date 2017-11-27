@@ -230,6 +230,7 @@
 				TargetAttributes = {
 					AAA9F0041EAF529A0077F726 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = M3YN599LE4;
 						ProvisioningStyle = Automatic;
 					};
 					AAA9F01D1EAF529B0077F726 = {
@@ -452,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3YN599LE4;
 				INFOPLIST_FILE = CCLog_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jfb.CCLog-Demo";
@@ -463,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3YN599LE4;
 				INFOPLIST_FILE = CCLog_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jfb.CCLog-Demo";
@@ -535,6 +538,7 @@
 				AAA9F0341EAF529B0077F726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAA9F0351EAF529B0077F726 /* Build configuration list for PBXNativeTarget "CCLog_DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +547,7 @@
 				AAA9F0371EAF529B0077F726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAA9F0381EAF529B0077F726 /* Build configuration list for PBXNativeTarget "CCLog_DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +556,7 @@
 				AAA9F03A1EAF529B0077F726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -27,6 +27,14 @@
      [Hardware]-[Shake Gesture]
      来模拟摇晃动作
      */
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        CCLog(@"................");
+        NSInteger num = arc4random() % 101;
+        CCLog(@"%ld",num);
+        
+        CCLogOnly(@"only...");
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

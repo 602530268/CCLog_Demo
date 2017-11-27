@@ -11,6 +11,9 @@
 const NSInteger maxTextLength = 10000;  //超过10000字符就去掉前面的
 
 @implementation CCLogView
+{
+    BOOL autoScroll;  //textView自动滚动
+}
 
 #pragma mark - 接口方法实现
 - (void)cc_show {
@@ -32,6 +35,7 @@ const NSInteger maxTextLength = 10000;  //超过10000字符就去掉前面的
             [_logTextView setContentOffset:off animated:NO];
         }
         
+        autoScroll = YES; //默认自动滚动
     }
 }
 
@@ -46,11 +50,21 @@ const NSInteger maxTextLength = 10000;  //超过10000字符就去掉前面的
     
     self.logTextView.text = (log.length > maxTextLength) ? [log substringFromIndex:log.length - maxTextLength] : log;
     self.cleanBtn.hidden = NO;
+    self.stopScrollBtn.hidden = NO;
+    
+    _logTextView.layoutManager.allowsNonContiguousLayout = autoScroll;
+    if (autoScroll) {
+        [_logTextView scrollRangeToVisible:NSMakeRange(_logTextView.text.length, 1)];
+    }
 }
 
 #pragma mark - 交互事件
 - (void)cleanBtnEvent {
-    self.logTextView.text = @"";
+    self.logTextView.text = @"log日志:";
+}
+
+- (void)stopScrollBtnEvent {
+    autoScroll = !autoScroll;
 }
 
 #pragma mark - UI
@@ -60,15 +74,12 @@ const NSInteger maxTextLength = 10000;  //超过10000字符就去掉前面的
     UIView *navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 64)];
     navView.backgroundColor = [UIColor whiteColor];
     [self addSubview:navView];
-    
-    self.cleanBtn.hidden = NO;
-    self.logTextView.hidden = NO;
 }
 
 #pragma mark - 懒加载
 - (UIButton *)cleanBtn {
     if (!_cleanBtn) {
-        _cleanBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - 70, 32-20, 50, 40)];
+        _cleanBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - 70, 44-20, 50, 38)];
         [_cleanBtn setTitle:@"clean" forState:UIControlStateNormal];
         [_cleanBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_cleanBtn addTarget:self action:@selector(cleanBtnEvent) forControlEvents:UIControlEventTouchUpInside];
@@ -79,6 +90,21 @@ const NSInteger maxTextLength = 10000;  //超过10000字符就去掉前面的
         [self addSubview:_cleanBtn];
     }
     return _cleanBtn;
+}
+
+- (UIButton *)stopScrollBtn {
+    if (!_stopScrollBtn) {
+        _stopScrollBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - 130, 44-20, 50, 38)];
+        [_stopScrollBtn setTitle:@"scroll" forState:UIControlStateNormal];
+        [_stopScrollBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_stopScrollBtn addTarget:self action:@selector(stopScrollBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+        _stopScrollBtn.layer.borderColor = [UIColor blueColor].CGColor;
+        _stopScrollBtn.layer.borderWidth = 1.0f;
+        _stopScrollBtn.layer.cornerRadius = 5.0;
+        _stopScrollBtn.layer.masksToBounds = YES;
+        [self addSubview:_stopScrollBtn];
+    }
+    return _stopScrollBtn;
 }
 
 - (UITextView *)logTextView {
